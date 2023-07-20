@@ -11,15 +11,15 @@ class Specialty extends Component {
 
     render() {
         let settings = {
-            dots: true,
+            dots: false,
             infinite: true,
             speed: 500,
             slidesToShow: 1,
             slidesToScroll: 1
         };
         return (
-            <div>
-                <div>
+            <div className='section-specialty'>
+                <div className='specialty-content'>
                     <Slider {...settings}>
                         <div>
                             <h3>1</h3>
