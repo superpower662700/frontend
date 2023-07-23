@@ -14,32 +14,44 @@ class Specialty extends Component {
             dots: false,
             infinite: true,
             speed: 500,
-            slidesToShow: 1,
-            slidesToScroll: 1
+            slidesToShow: 4,  //hiem thi 4 cai
+            slidesToScroll: 1 // next 1 cai 1 lan click
         };
         return (
             <div className='section-specialty'>
-                <div className='specialty-content'>
-                    <Slider {...settings}>
-                        <div>
-                            <h3>1</h3>
-                        </div>
-                        <div>
-                            <h3>2</h3>
-                        </div>
-                        <div>
-                            <h3>3</h3>
-                        </div>
-                        <div>
-                            <h3>4</h3>
-                        </div>
-                        <div>
-                            <h3>5</h3>
-                        </div>
-                        <div>
-                            <h3>6</h3>
-                        </div>
-                    </Slider>
+                <div className='specialty-container'>
+                    <div className='specialty-header'>
+                        <span className='title-section'>Chuyên khoa phổ biến</span>
+                        <button className='btn-section'>Xem thêm</button>
+                    </div>
+                    <div className='specialty-body'>
+                        <Slider {...settings}>
+                            <div className='spcialty-customize'>
+                                <div className='bg-image' />
+                                <div>Cơ xương khớp 1</div>
+                            </div>
+                            <div className='spcialty-customize'>
+                                <div className='bg-image' />
+                                <div>Cơ xương khớp 2</div>
+                            </div>
+                            <div className='spcialty-customize'>
+                                <div className='bg-image' />
+                                <div>Cơ xương khớp 3</div>
+                            </div>
+                            <div className='spcialty-customize'>
+                                <div className='bg-image' />
+                                <div>Cơ xương khớp 4</div>
+                            </div>
+                            <div className='spcialty-customize'>
+                                <div className='bg-image' />
+                                <div>Cơ xương khớp 5</div>
+                            </div>
+                            <div className='spcialty-customize'>
+                                <div className='bg-image' />
+                                <div>Cơ xương khớp 6</div>
+                            </div>
+                        </Slider>
+                    </div>
                 </div>
             </div>
         );
