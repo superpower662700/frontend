@@ -1,0 +1,176 @@
+.slick-prev {
+    border: 1px solid gray !important;
+    left: -10px !important;
+    z-index: 1000 !important;
+    height: 48px !important;
+    width: 44px !important;
+    background: #fff !important;
+
+    &:hover {
+        background: #f5f5f5 !important;
+    }
+}
+
+.slick-next {
+    border: 1px solid gray !important;
+    right: -10px !important;
+    z-index: 1000 !important;
+    height: 48px !important;
+    width: 44px !important;
+    background: #fff !important;
+
+    &:hover {
+        background: #f5f5f5 !important;
+    }
+}
+
+.slick-prev:before,
+.slick-next:before {
+    font-family: FontAwesome !important;
+    color: red !important;
+}
+
+
+.section-share {
+
+    &.section-specialty {
+        background: #fff;
+    }
+
+    &.section-medical-facility {
+        background: #f5f5f5;
+    }
+
+    &.section-HandBook {
+        background: #f5f5f5;
+    }
+
+
+    .section-body {
+        .section-customize {
+            .bg-image {
+
+                background-position: center center;
+                background-repeat: no-repeat;
+                background-color: #eee;
+                background-size: cover;
+                margin: 0 auto;
+
+                &.section-specialty {
+                    width: 315px;
+                    height: 188px;
+                    background-image: url('../../assets/images/112457-co-xuong-khop.jpg');
+                }
+
+                &.section-medical-facility {
+                    width: 316px;
+                    height: 100px;
+                    background-image: url('../../assets/images/170749-benh-vien-an-viet.jpg');
+                }
+
+                &.section-OutstandingDoctor {
+                    width: 200px;
+                    height: 200px;
+                    background-image: url('../../assets/images/105401-bsckii-tran-minh-khuyen.jpg');
+                    border-radius: 50%;
+                }
+
+                &.section-HandBook {
+                    width: 300px;
+                    height: 157px;
+                    background-image: url('../../assets/images/Camnang.jpg');
+                }
+
+
+
+            }
+        }
+    }
+}
+
+.section-share {
+
+    height: 330px;
+
+    .section-container {
+        display: flex;
+        margin: 0 100px;
+        flex-direction: column;
+
+        .section-header {
+            height: 60px;
+            margin-bottom: 30px;
+            padding-top: 30px;
+
+            .title-section {
+                font-size: 22px;
+                font-weight: 600;
+            }
+
+            .btn-section {
+                float: right;
+                padding: 10px 15px;
+                border: none;
+                outline: none;
+                display: block;
+                background: #ebebeb;
+                color: black;
+                text-transform: uppercase;
+
+                &:hover {
+                    color: #f5f5f5;
+                    background: #f7d800;
+                }
+            }
+        }
+
+
+    }
+}
+
+.section-OutstandingDoctor {
+    .section-customize {
+        padding: 5px;
+
+        .customize-border {
+
+            border: 1px solid #534f4f3c;
+        }
+    }
+}
+
+.section-About {
+    padding: 0 100px;
+    height: 500px;
+
+    .section-about-header {
+        padding: 20px 10px;
+        font-size: 22px;
+        font-weight: 600;
+    }
+
+    .section-about-content {
+        width: 100%;
+        display: flex;
+        gap: 15px;
+
+        .content-left {
+            width: 60%;
+            height: 100%;
+        }
+
+        .content-right {
+            width: 40%;
+
+            p {
+                text-align: justify;
+                font-style: italic;
+            }
+        }
+    }
+}
+
+.homefooter-body {
+    height: 30px;
+    background-color: aqua;
+}
