@@ -24,10 +24,19 @@ const handleEditUserApi = (user) => {
         }
     });
 }
+///api/getAllCode
+const getAllCodeService = (typeInput) => {
+    return axios.get(`/api/getAllCode?type=${typeInput}`);
+}
+const getTopDoctorHomeService = (limit) => {
+    return axios.get(`/api/top-doctor-home?type=${limit}`);
+}
 export {
     handleLoginApi,
     handleUserApi,
     handleAddUserApi,
     handleDeleteUserApi,
-    handleEditUserApi
+    handleEditUserApi,
+    getAllCodeService,
+    getTopDoctorHomeService,
 }

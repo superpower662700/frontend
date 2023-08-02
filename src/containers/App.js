@@ -7,13 +7,9 @@ import { ToastContainer } from 'react-toastify';
 import CustomScrollbars from '../components/CustomScrollbars'
 
 import { userIsAuthenticated, userIsNotAuthenticated } from '../hoc/authentication';
-
 import { path } from '../utils';
 import Home from '../routes/Home';
-// import Login from '../routes/Login';
 import Login from './Auth/Login';
-
-import Header from './Header/Header';
 import System from '../routes/System';
 import Homepage from './HomePage/Homepage';
 import { CustomToastCloseButton } from '../components/CustomToast';
@@ -44,8 +40,7 @@ class App extends Component {
             <Fragment>
                 <Router history={history}>
                     <div className="main-container">
-                        {this.props.isLoggedIn && <Header />}
-
+                        {/* {this.props.isLoggedIn && <Header />} */}
                         <div className="content-container">
                             <CustomScrollbars style={{ height: '100vh', width: '100%' }}>
                                 <Switch>
@@ -57,12 +52,26 @@ class App extends Component {
                             </CustomScrollbars>
                         </div>
 
-                        <ToastContainer
+                        {/* <ToastContainer
                             className="toast-container" toastClassName="toast-item" bodyClassName="toast-item-body"
                             autoClose={false} hideProgressBar={true} pauseOnHover={false}
                             pauseOnFocusLoss={true} closeOnClick={false} draggable={false}
                             closeButton={<CustomToastCloseButton />}
+                        /> */}
+                        <ToastContainer
+                            position="bottom-left"
+                            autoClose={5000}
+                            hideProgressBar={false}
+                            newestOnTop={false}
+                            closeOnClick
+                            rtl={false}
+                            pauseOnFocusLoss
+                            draggable
+                            pauseOnHover
+                            theme="light"
                         />
+                        {/* Same as */}
+                        <ToastContainer />
                     </div>
                 </Router>
             </Fragment>
