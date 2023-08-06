@@ -3,7 +3,7 @@ export const adminMenu = [
         name: 'menu.admin.manage-user',
         menus: [
             {
-                name: 'menu.admin.manage-docter',
+                name: 'menu.admin.manage-docter', link: '/system/manage-doctor',
                 //  link: '/system/user-docter',
                 // name: 'menu.system.system-administrator.header',
                 // subMenus: [

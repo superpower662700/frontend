@@ -11,6 +11,10 @@
     }
 }
 
+.slick-disabled {
+    display: none !important;
+}
+
 .slick-next {
     border: 1px solid gray !important;
     right: -10px !important;

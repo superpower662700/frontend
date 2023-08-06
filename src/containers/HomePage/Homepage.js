@@ -16,7 +16,7 @@ class Homepage extends Component {
     render() {
         let settings = {
             dots: false,
-            infinite: true,
+            infinite: false,
             speed: 500,
             slidesToShow: 4,  //hiem thi 4 cai
             slidesToScroll: 1 // next 1 cai 1 lan click

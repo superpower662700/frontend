@@ -9,8 +9,8 @@
         "fee": "Examination package",
         "check-health": "General health check-up",
         "support": "Support",
-        "title1": "HEALTH FOUNDATION",
-        "title2": "COMPLETE HEALTH CARE",
+        "title1": "MEDICAL PLATFORM",
+        "title2": "COMPREHENSIVE HEALTH CARE",
         "child1": "Specialist examination",
         "child2": "Remote examination",
         "child3": "General examination",
@@ -50,5 +50,9 @@
         "avatar": "Avatar",
         "save": "Save",
         "edit": "Update"
+    },
+    "homepage": {
+        "out-standing-doctor": "Out Standing Doctor",
+        "more-infor": "More Infor"
     }
 }
