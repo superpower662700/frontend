@@ -11,16 +11,16 @@ export const adminMenu = [
                 //     { name: 'menu.system.system-administrator.user-redux', link: '/system/user-redux' },
                 // ]
             },
-
-            {
-                name: 'menu.admin.manage-admin',
-            },
             // link: '/system/user-admin',
             {
                 name: 'menu.admin.crud', link: '/system/user-manage',
             },
             {
                 name: 'menu.admin.crud-redux', link: '/system/user-redux',
+            },
+
+            {
+                name: 'menu.doctor.manage-doctor', link: '/doctor/manage-schedule',
             },
         ],
     },
@@ -45,4 +45,16 @@ export const adminMenu = [
             },
         ]
     }
+]
+
+export const doctorMenu = [
+    { //hệ thống
+        name: 'menu.admin.manage-user',
+        menus: [
+            {
+                name: 'menu.doctor.manage-doctor', link: '/doctor/manage-schedule',
+            },
+        ],
+    },
+
 ]

@@ -25,7 +25,7 @@ class Homepage extends Component {
         return (
 
             <div>
-                <HeaderHome />
+                <HeaderHome isShowBanner={true} />
                 <Specialty
                     settings={settings}
                 />

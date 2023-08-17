@@ -3,12 +3,20 @@ export const path = {
     HOMEPAGE: '/home',
     LOGIN: '/login',
     LOG_OUT: '/logout',
-    SYSTEM: '/system'
+    SYSTEM: '/system',
+    DETAIL_DOCTOR: '/detail-doctor/:id',
+    DOCTOR: '/doctor',
 };
 
 export const LANGUAGE = {
     VI: 'vi',
     EN: 'en'
+};
+
+export const ROLE = {
+    ADMIN: 'R1',
+    DOCTOR: 'R2',
+    PATIENT: 'R3'
 };
 
 export const CRUD_ACTIONS = {

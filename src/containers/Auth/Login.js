@@ -67,6 +67,12 @@ class Login extends Component {
             issShowPassword: !this.state.issShowPassword
         })
     }
+
+    handleKeyDown = (event) => {
+        if (event.key === 'Enter' || event.keyCode === 13) {
+            this.handleLogin();
+        }
+    }
     render() {
 
 
@@ -80,7 +86,9 @@ class Login extends Component {
                             <input type="text" value={this.state.username}
                                 onChange={(event) => this.handleOnChangeusername(event)}
                                 className="form-control"
-                                placeholder='Enter your username' />
+                                placeholder='Enter your username'
+                                onKeyDown={(event) => this.handleKeyDown(event)}
+                            />
                         </div>
                         <div className="col-12 form-group login-input">
                             <label>Password:</label>

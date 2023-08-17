@@ -1,6 +1,6 @@
 import actionTypes from './actionTypes';
 import {
-    getAllCodeService, handleAddUserApi, handleUserApi, handleDeleteUserApi,
+    getAllCodeService, handleAddUserApi, handleUserApi, handleDeleteUserApi, getDetailDoctorByIdService,
     handleEditUserApi, getTopDoctorHomeService, getAllDoctorService, saveInforDoctor
 } from '../../../src/services/userService'
 import { toast } from 'react-toastify';
@@ -212,9 +212,7 @@ export const fetAllDoctorFailed = () => ({
 export const saveDetailDoctorStart = (data) => {
     return async (dispatch, getState) => {
         try {
-            console.log(data);
             let res = await saveInforDoctor(data);
-
             if (res && res.errCode === 0) {
                 dispatch(saveDetailDoctorSuccess())
                 toast.success("Save Infor Doctor Success")
@@ -224,7 +222,7 @@ export const saveDetailDoctorStart = (data) => {
                 toast.error("Save Infor Doctor Error")
             }
         } catch (error) {
-            dispatch(fetAllDoctorFailed());
+            dispatch(saveDetailDoctorFailed());
             toast.error("Save Infor Doctor Error")
         }
     }
@@ -234,4 +232,49 @@ export const saveDetailDoctorSuccess = () => ({
 })
 export const saveDetailDoctorFailed = () => ({
     type: actionTypes.SAVE_DETAIL_DOCTOR_FAILED,
+})
+
+export const fetDetailDoctorByIdStart = (id) => {
+    return async (dispatch, getState) => {
+        try {
+            let res = await getDetailDoctorByIdService(id);
+            if (res && res.errCode === 0) {
+                dispatch(fetDetailDoctorByIdSuccess(res.data))
+            } else {
+                dispatch(fetDetailDoctorByIdFailed());
+            }
+        } catch (error) {
+            dispatch(fetDetailDoctorByIdFailed());
+        }
+    }
+}
+export const fetDetailDoctorByIdSuccess = (data) => ({
+    type: actionTypes.FETCH_DETAIL_DOCTOR_BY_ID_SUCCESS,
+    data: data
+})
+export const fetDetailDoctorByIdFailed = () => ({
+    type: actionTypes.FETCH_DETAIL_DOCTOR_BY_ID_FAILED,
+})
+
+export const fetAllScheduleTimeStart = () => {
+    return async (dispatch, getState) => {
+        try {
+            let res = await getAllCodeService('TIME');
+            console.log(res.data);
+            if (res && res.errCode === 0) {
+                dispatch(fetAllScheduleTimeSuccess(res.data))
+            } else {
+                dispatch(fetAllScheduleTimeFailed());
+            }
+        } catch (error) {
+            dispatch(fetAllScheduleTimeFailed());
+        }
+    }
+}
+export const fetAllScheduleTimeSuccess = (timeData) => ({
+    type: actionTypes.FETCH_ALL_SCHEDULE_TIME_SUCCESS,
+    data: timeData
+})
+export const fetAllScheduleTimeFailed = () => ({
+    type: actionTypes.FETCH_ALL_SCHEDULE_TIME_FAILED
 })
