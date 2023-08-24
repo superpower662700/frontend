@@ -17,6 +17,7 @@ class DetailDoctor extends Component {
         }
     }
 
+
     async componentDidMount() {
         await this.props.getDetailDoctorStart(this.props.match.params.id)
     }
