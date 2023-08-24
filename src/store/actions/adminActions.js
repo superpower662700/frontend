@@ -260,7 +260,6 @@ export const fetAllScheduleTimeStart = () => {
     return async (dispatch, getState) => {
         try {
             let res = await getAllCodeService('TIME');
-            console.log(res.data);
             if (res && res.errCode === 0) {
                 dispatch(fetAllScheduleTimeSuccess(res.data))
             } else {
