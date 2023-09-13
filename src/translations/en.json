@@ -63,5 +63,14 @@
         "choose-doctor": "Choose doctor",
         "choose-date": "Choose date",
         "save": "Save Infor"
+    },
+    "patient": {
+        "examination-schedule": "Examination schedule",
+        "text1": "There are no appointments during this time, please choose another time!",
+        "examination-address": "EXAMINATION ADDRESS",
+        "examination-price": "Examination Price: ",
+        "see-details": "See details",
+        "text2": "The hospital has the following forms of payment:",
+        "hide-less": "Hide less"
     }
 }

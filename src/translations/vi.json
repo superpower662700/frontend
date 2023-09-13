@@ -61,5 +61,14 @@
         "choose-doctor": "Chọn bác sỹ",
         "choose-date": "Chọn ngày",
         "save": "Lưu thông tin"
+    },
+    "patient": {
+        "examination-schedule": "Lịch Khám",
+        "text1": "Không có lịch hẹn trong thời gian này, vui lòng chọn thời gian khác !",
+        "examination-address": "ĐỊA CHỈ KHÁM",
+        "examination-price": "Giá Khám: ",
+        "see-details": "Xem Chi Tiết",
+        "text2": "Bệnh viện có các hình thức thanh toán:",
+        "hide-less": "Ẩn bớt"
     }
 }

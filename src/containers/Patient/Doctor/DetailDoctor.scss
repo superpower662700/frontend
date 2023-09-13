@@ -1,14 +1,15 @@
 .doctor-detail-container {
     height: 500px;
-
+    
     .intro-doctor {
         display: flex;
-
         margin: 0 100px;
         .content-left {
             width: 120px;
             border-radius: 50%;
-            background: center center no-repeat;
+            background-size: cover;
+            background-repeat: no-repeat;
+            background-position: center;
             height: 120px;
             margin: 10px 20px;
         }
@@ -31,14 +32,23 @@
         }
     }
 
-    .schedule-doctor {}
+    .schedule-doctor {
+        margin: 0 100px;
+        display: flex;
+        min-height: 200px;
+        .content-left{
+            width: 50%;
+        }
+        .content-right{
+            width: 50%;
+        }
+    }
 
     .detail-infor-doctor {
         border-bottom: 1px solid #ddd;
         border-top: 1px solid #ddd;
-        border-color: #f9f9f9;
+        background-color: #f9f9f9;
         padding: 10px 100px;
-
         h3{
             font-size: 17px;
         }

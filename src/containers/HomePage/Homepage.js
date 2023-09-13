@@ -32,7 +32,6 @@ class Homepage extends Component {
                 <MedicalFacility
                     settings={settings}
                 />
-
                 <OutstandingDoctor
                     settings={settings}
                 />

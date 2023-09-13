@@ -277,3 +277,68 @@ export const fetAllScheduleTimeSuccess = (timeData) => ({
 export const fetAllScheduleTimeFailed = () => ({
     type: actionTypes.FETCH_ALL_SCHEDULE_TIME_FAILED
 })
+
+export const fetchPriceStart = () => {
+    return async (dispatch, getState) => {
+        try {
+            let res = await getAllCodeService('PRICE');
+            if (res && res.errCode === 0) {
+                dispatch(fetchPriceSuccess(res.data))
+            } else {
+                dispatch(fetchPriceFailed());
+            }
+        } catch (error) {
+            dispatch(fetchPriceFailed());
+        }
+    }
+}
+export const fetchPriceSuccess = (PriceData) => ({
+    type: actionTypes.FETCH_PRICE_SUCCESS,
+    data: PriceData
+})
+export const fetchPriceFailed = () => ({
+    type: actionTypes.FETCH_PRICE_FAILED
+})
+
+export const fetchPaymentStart = () => {
+    return async (dispatch, getState) => {
+        try {
+            let res = await getAllCodeService('PAYMENT');
+            if (res && res.errCode === 0) {
+                dispatch(fetchPaymentSuccess(res.data))
+            } else {
+                dispatch(fetchPaymentFailed());
+            }
+        } catch (error) {
+            dispatch(fetchPaymentFailed());
+        }
+    }
+}
+export const fetchPaymentSuccess = (PaymentData) => ({
+    type: actionTypes.FETCH_PAYMENT_SUCCESS,
+    data: PaymentData
+})
+export const fetchPaymentFailed = () => ({
+    type: actionTypes.FETCH_PAYMENT_FAILED,
+})
+export const fetchProvinceStart = () => {
+    return async (dispatch, getState) => {
+        try {
+            let res = await getAllCodeService('PROVINCE');
+            if (res && res.errCode === 0) {
+                dispatch(fetchProvinceSuccess(res.data))
+            } else {
+                dispatch(fetchProvinceFailed());
+            }
+        } catch (error) {
+            dispatch(fetchProvinceFailed());
+        }
+    }
+}
+export const fetchProvinceSuccess = (ProvinceData) => ({
+    type: actionTypes.FETCH_PROVINCE_SUCCESS,
+    data: ProvinceData
+})
+export const fetchProvinceFailed = () => ({
+    type: actionTypes.FETCH_PROVINCE_FAILED
+})

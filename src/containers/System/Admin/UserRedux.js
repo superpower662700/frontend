@@ -176,6 +176,7 @@ class UserRedux extends Component {
             userEditId: user.id,
             action: CRUD_ACTIONS.EDIT,
         })
+        console.log(user);
     }
 
     render() {

@@ -7,8 +7,11 @@ import * as actions from "../../../store/actions";
 import './DetailDoctor.scss'
 import 'react-image-lightbox/style.css';
 import HeaderHome from '../../HomePage/HeaderHome';
-
+import DoctorSchedule from './DoctorSchedule';
+import DoctorExtraInfor from './DoctorExtraInfor';
+import ProfileDoctor from './ProfileDoctor';
 class DetailDoctor extends Component {
+
 
     constructor(props) {
         super(props);
@@ -43,25 +46,21 @@ class DetailDoctor extends Component {
             <>
                 <HeaderHome isShowBanner={false} />
                 <div className='doctor-detail-container'>
-                    <div className='intro-doctor'>
-                        <div className='content-left'
-                            style={{ backgroundImage: `url(${detailDoctorById && detailDoctorById.image ? detailDoctorById.image : ''})` }}
-                        />
-                        <div className='content-right'>
-                            <div className='up'>
-                                {language === LANGUAGE.VI ? nameVi : nameEn}
-                            </div>
-                            <div className='down'>
-                                {detailDoctorById && detailDoctorById.Markdown && detailDoctorById.Markdown.description &&
-                                    <span>
-                                        {detailDoctorById.Markdown.description}
-                                    </span>
-                                }
-                            </div>
-                        </div>
-                    </div>
+                    <ProfileDoctor
+                        doctorId={detailDoctorById.id}
+                        isShowInforDoctor={false}
+                    />
                     <div className='schedule-doctor'>
-
+                        <div className='content-left'>
+                            <DoctorSchedule
+                                doctorIdFromParent={detailDoctorById && detailDoctorById.id ? detailDoctorById.id : -1}
+                            />
+                        </div>
+                        <div className='content-right'>
+                            <DoctorExtraInfor
+                                doctorIdFromParent={detailDoctorById && detailDoctorById.id ? detailDoctorById.id : -1}
+                            />
+                        </div>
                     </div>
                     <div className='detail-infor-doctor'>
                         {

@@ -5,7 +5,6 @@ import UserManage from '../containers/System/UserManage';
 import UserRedux from '../containers/System/Admin/UserRedux';
 import Header from '../containers/Header/Header';
 import ManageDoctor from '../containers/System/Admin/ManageDoctor';
-import Doctor from './Doctor';
 class System extends Component {
     render() {
         const { systemMenuPath, isLoggedIn } = this.props;

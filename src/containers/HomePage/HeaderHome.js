@@ -58,7 +58,7 @@ class HeaderHome extends Component {
                         </div>
                     </div>
                 </div>
-                {this.props.isisShowBanner === true &&
+                {this.props.isShowBanner === true &&
                     <div className='home-header-banner'>
                         <div className='content-up'><div className='title1'><FormattedMessage id="headerhome.title1" /></div>
                             <div className='title2'><FormattedMessage id="headerhome.title2" /></div>

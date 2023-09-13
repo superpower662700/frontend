@@ -88,8 +88,7 @@ class ManageSchedule extends Component {
             toast.error("Invalid Date")
             return;
         }
-        // let formatedDate = moment(currentDate).format(dateFormat.SEND_TO_SERVER);
-
+        console.log('currentDate: ', currentDate);
         let formatedDate = new Date(currentDate).getTime();
 
         if (rangeTime && rangeTime.length > 0) {
@@ -106,19 +105,24 @@ class ManageSchedule extends Component {
                 toast.error("Invalid Selecte Time");
                 return;
             }
-            console.log(result);
             let data = await saveBulkSchedule({
                 arrSchedule: result,
                 doctorId: selectedDoctor.value,
                 date: formatedDate
             });
-            console.log(data);
+            if (!data.errCode && data.errCode === 0) {
+                toast.success("Success Doctor Schedule");
+            }
+            else {
+                toast.error("Error");
+            }
         }
 
     }
     render() {
         let { rangeTime } = this.state;
         let { language } = this.props;
+        let yesterday = new Date(new Date().setDate(new Date().getDate() - 1));
         return (
             <div className='manage-schedule-container'>
                 <div className='m-s-title'>
@@ -140,7 +144,7 @@ class ManageSchedule extends Component {
                                 onChange={this.handleOnChangeDatePicker}
                                 className='form-control'
                                 value={this.state.currentDate}
-                                minDate={new Date()}
+                                minDate={yesterday}
                             />
                         </div>
                         <div className='col-12 pick-hour-container'>
