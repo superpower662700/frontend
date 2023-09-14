@@ -69,6 +69,16 @@
         "examination-price": "Giá Khám: ",
         "see-details": "Xem Chi Tiết",
         "text2": "Bệnh viện có các hình thức thanh toán:",
-        "hide-less": "Ẩn bớt"
+        "hide-less": "Ẩn bớt",
+        "text3": "Thông tin đặt lịch khám bệnh",
+        "name": "Họ và tên",
+        "phonenumber": "Số điện thoại",
+        "email": "Địa chỉ Email",
+        "addres": "Địa chỉ liên hệ",
+        "reason": "Lý do khám",
+        "date": "Ngày Sinh",
+        "sex": "Giới tính",
+        "ok": "Xác nhận",
+        "close": "Đóng"
     }
 }

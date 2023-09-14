@@ -50,6 +50,12 @@ const getDoctorSchedule = (doctorId, date) => {
 const getDoctorInfor = (doctorId) => {
     return axios.get(`/api/get-doctor-infor-by-id?doctorId=${doctorId}`);
 }
+const saveBooking = (data) => {
+    return axios.post('/api/save-patient-booking', data);
+}
+const postVerifyBooking = (data) => {
+    return axios.post('/api/verify-booking-patient', data);
+}
 export {
     handleLoginApi,
     handleUserApi,
@@ -63,5 +69,7 @@ export {
     saveBulkSchedule,
     getDetailDoctorByIdService,
     getDoctorSchedule,
-    getDoctorInfor
+    getDoctorInfor,
+    saveBooking,
+    postVerifyBooking,
 }

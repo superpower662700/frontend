@@ -71,6 +71,16 @@
         "examination-price": "Examination Price: ",
         "see-details": "See details",
         "text2": "The hospital has the following forms of payment:",
-        "hide-less": "Hide less"
+        "hide-less": "Hide less",
+        "text3": "Information on scheduling medical examinations",
+        "name": "First and last name",
+        "phonenumber": "Phone Number",
+        "email": "Email",
+        "address": "Address",
+        "reason": "Reason",
+        "date": "Birthday",
+        "sex": "Gender",
+        "ok": "Confirm",
+        "close": "Close"
     }
 }

@@ -50,7 +50,6 @@ class ProfileDoctor extends Component {
         return result
     }
     renderTimeBooking = (dataTime) => {
-        console.log(dataTime);
         let { language } = this.props
         let currentDate = moment(new Date(dataTime.date)).startOf('days').valueOf();
         let date = language === LANGUAGE.VI ? moment(currentDate).format('dddd - DD/MM/YYYY') : moment(currentDate).locale('en').format('ddd - MM/DD/YYYY')
