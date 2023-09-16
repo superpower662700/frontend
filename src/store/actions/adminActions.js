@@ -1,7 +1,7 @@
 import actionTypes from './actionTypes';
 import {
     getAllCodeService, handleAddUserApi, handleUserApi, handleDeleteUserApi, getDetailDoctorByIdService,
-    handleEditUserApi, getTopDoctorHomeService, getAllDoctorService, saveInforDoctor
+    handleEditUserApi, getTopDoctorHomeService, getAllDoctorService, saveInforDoctor, getAllSpecialtyService
 } from '../../../src/services/userService'
 import { toast } from 'react-toastify';
 
@@ -341,4 +341,26 @@ export const fetchProvinceSuccess = (ProvinceData) => ({
 })
 export const fetchProvinceFailed = () => ({
     type: actionTypes.FETCH_PROVINCE_FAILED
+})
+
+export const fetchSpecialtyStart = () => {
+    return async (dispatch, getState) => {
+        try {
+            let res = await getAllSpecialtyService('ALL');
+            if (res && res.errCode === 0) {
+                dispatch(fetchSpecialtySuccess(res.data))
+            } else {
+                dispatch(fetchSpecialtyFailed());
+            }
+        } catch (error) {
+            dispatch(fetchProvinceFailed());
+        }
+    }
+}
+export const fetchSpecialtySuccess = (Specialty) => ({
+    type: actionTypes.FETCH_SPECIALTY_SUCCESS,
+    data: Specialty
+})
+export const fetchSpecialtyFailed = () => ({
+    type: actionTypes.FETCH_SPECIALTY_FAILED
 })

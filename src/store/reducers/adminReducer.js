@@ -13,6 +13,7 @@ const initialState = {
     doctors: [],
     detailDoctor: [],
     scheduleTime: [],
+    specialty: [],
 
 }
 
@@ -133,6 +134,16 @@ const adminReducer = (state = initialState, action) => {
             }
         case actionTypes.FETCH_PROVINCE_FAILED:
             state.provinces = [];
+            return {
+                ...state
+            }
+        case actionTypes.FETCH_SPECIALTY_SUCCESS:
+            state.specialty = action.data;
+            return {
+                ...state
+            }
+        case actionTypes.FETCH_SPECIALTY_FAILED:
+            state.specialty = [];
             return {
                 ...state
             }

@@ -34,9 +34,13 @@ class ManageDoctor extends Component {
             listPrice: [],
             listPayment: [],
             listProvince: [],
+            listSpecialty: [],
+            listClinic: [],
             selectedPrice: '',
             selectedPayment: '',
             selectedProvince: '',
+            selectedSpecialty: '',
+            selectedClinic: '',
             addressClinic: '',
             nameClinic: '',
             note: '',
@@ -51,6 +55,7 @@ class ManageDoctor extends Component {
         this.props.getPriceStart();
         this.props.getPaymentStart();
         this.props.getProvinceStart();
+        this.props.getSpecialtyStart();
     }
     componentDidUpdate(prevProps, prevState, snapshot) {
         if (prevProps.doctors !== this.props.doctors) {
@@ -76,6 +81,13 @@ class ManageDoctor extends Component {
             this.setState({
                 listProvince: this.props.provinces,
                 selectedProvince: this.props.provinces && this.props.provinces.length > 0 ? this.props.provinces[0].keyMap : ''
+            })
+        }
+        if (prevProps.specialty !== this.props.specialty) {
+            let specialty = this.props.specialty
+            this.setState({
+                listSpecialty: specialty,
+                selectedSpecialty: specialty[0].id,
             })
         }
 
@@ -138,7 +150,6 @@ class ManageDoctor extends Component {
                 note: this.state.detailDoctorById.Doctor_infor.note,
             })
         }
-        console.log(this.state.selectedPrice);
     }
     checkValideInput = () => {
         let isValid = true;
@@ -163,6 +174,8 @@ class ManageDoctor extends Component {
 
                 priceId: this.state.selectedPrice,
                 paymentId: this.state.selectedPayment,
+                specialtyId: this.state.selectedSpecialty,
+                clinicId: this.state.selectedClinic,
                 provinceId: this.state.selectedProvince,
                 addressClinic: this.state.addressClinic,
                 nameClinic: this.state.nameClinic,
@@ -178,6 +191,7 @@ class ManageDoctor extends Component {
                 selectedPayment: this.props.payments && this.props.payments.length > 0 ? this.props.payments[0].keyMap : '',
                 selectedProvince: this.props.provinces && this.props.provinces.length > 0 ? this.props.provinces[0].keyMap : '',
                 addressClinic: '',
+                selectedSpecialty: this.props.specialty[0].id,
                 nameClinic: '',
                 note: '',
             })
@@ -210,9 +224,8 @@ class ManageDoctor extends Component {
         return result;
     }
     render() {
-        let { hasOldData, listPrice, listProvince, listPayment, addressClinic, nameClinic, note, description } = this.state;
+        let { hasOldData, listPrice, listProvince, listPayment, addressClinic, nameClinic, note, description, listSpecialty } = this.state;
         let { language } = this.props;
-        console.log(this.state.detailDoctorById);
         return (
             <div className='manage-doctor-container'>
                 <div className='manage-doctor-title'>
@@ -299,6 +312,34 @@ class ManageDoctor extends Component {
                             onChange={(event) => this.handleOnChangInput(event, 'note')}
                         />
                     </div>
+                    <div className='col-4 form-group'>
+                        <label>Chọn chuyên khoa</label>
+                        <select className='form-control'
+                            onChange={(event) => this.handleOnChangInput(event, 'selectedSpecialty')}
+                            value={this.state.selectedSpecialty}
+                        >
+                            {listSpecialty.map((item, index) => {
+                                return (
+                                    <option key={index} value={item.id}
+                                    >{item.name}</option>
+                                )
+                            })}
+                        </select>
+                    </div>
+                    <div className='col-4 form-group'>
+                        <label>Chọn phòng</label>
+                        <select className='form-control'
+                            onChange={(event) => this.handleOnChangInput(event, 'selectedClinic')}
+                            value={this.state.selectedClinic}
+                        >
+                            {/* {listPrice.map((item, index) => {
+                                return (
+                                    <option key={index} value={item.keyMap}
+                                    >{language === LANGUAGE.VI ? item.valueVi : item.valueEn}</option>
+                                )
+                            })} */}
+                        </select>
+                    </div>
                 </div>
                 <div className='manage-doctor-editor'>
                     <MdEditor style={{ height: '500px' }}
@@ -323,6 +364,7 @@ const mapStateToProps = state => {
         prices: state.admin.prices,
         payments: state.admin.payments,
         provinces: state.admin.provinces,
+        specialty: state.admin.specialty,
     };
 };
 
@@ -334,6 +376,7 @@ const mapDispatchToProps = dispatch => {
         getPriceStart: () => dispatch(actions.fetchPriceStart()),
         getPaymentStart: () => dispatch(actions.fetchPaymentStart()),
         getProvinceStart: () => dispatch(actions.fetchProvinceStart()),
+        getSpecialtyStart: () => dispatch(actions.fetchSpecialtyStart()),
     };
 };
 

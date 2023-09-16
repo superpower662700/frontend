@@ -27,14 +27,14 @@ export const adminMenu = [
     {
         name: 'menu.admin.clinic', menus: [
             {
-                name: 'menu.admin.manage-clinic',
+                name: 'menu.admin.manage-clinic', link: '/system/manage-clinic',
             },
         ],
     },
     {
         name: 'menu.admin.speciality', menus: [
             {
-                name: 'menu.admin.manage-specialty',
+                name: 'menu.admin.manage-specialty', link: '/system/manage-specialty',
             },
         ],
     },

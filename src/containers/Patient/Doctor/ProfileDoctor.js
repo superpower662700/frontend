@@ -12,6 +12,7 @@ import localization from 'moment/locale/vi';
 import moment from 'moment';
 
 import NumberFormat from 'react-number-format';
+import { Link } from 'react-router-dom/cjs/react-router-dom';
 class ProfileDoctor extends Component {
 
 
@@ -65,7 +66,7 @@ class ProfileDoctor extends Component {
 
     render() {
         let { doctorInfor } = this.state;
-        let { language, isShowInforDoctor, dataTime } = this.props;
+        let { language, isShowInforDoctor, dataTime, isShowLinkDetailDoctor } = this.props;
         let nameVi = '';
         let nameEn = '';
         if (doctorInfor && doctorInfor.positionData) {
@@ -77,7 +78,8 @@ class ProfileDoctor extends Component {
                 <div className='intro-doctor'>
                     <div className='content-left'
                         style={{ backgroundImage: `url(${doctorInfor && doctorInfor.image ? doctorInfor.image : ''})` }}
-                    />
+                    >
+                    </div>
                     <div className='content-right'>
                         <div className='up'>
                             {language === LANGUAGE.VI ? nameVi : nameEn}
@@ -96,29 +98,40 @@ class ProfileDoctor extends Component {
                             }
 
                         </div>
+
                     </div>
+
                 </div>
-                {isShowInforDoctor === true ?
-                    <div>
+                {
+                    isShowLinkDetailDoctor === true ?
+                        < div className='seen'>
+                            <Link to={`/detail-doctor/${this.props.doctorId}`}>Xem Thêm</Link>
+                        </div >
+                        : ''
+                }
+                {
+                    isShowInforDoctor === true ?
+                        <div>
 
-                        <FormattedMessage id='patient.examination-price' />
-                        {doctorInfor && doctorInfor.Doctor_infor && doctorInfor.Doctor_infor.priceTypeData && language === LANGUAGE.VI &&
-                            <NumberFormat
-                                value={doctorInfor.Doctor_infor.priceTypeData.valueVi}
-                                displayType={'text'}
-                                thousandSeparator={true}
-                                suffix={'VND'}
-                            />}
-                        {doctorInfor && doctorInfor.Doctor_infor && doctorInfor.Doctor_infor.priceTypeData && language === LANGUAGE.EN &&
-                            <NumberFormat
-                                value={doctorInfor.Doctor_infor.priceTypeData.valueEn}
-                                displayType={'text'}
-                                thousandSeparator={true}
-                                suffix={'$'}
-                            />}
+                            <FormattedMessage id='patient.examination-price' />
+                            {doctorInfor && doctorInfor.Doctor_infor && doctorInfor.Doctor_infor.priceTypeData && language === LANGUAGE.VI &&
+                                <NumberFormat
+                                    value={doctorInfor.Doctor_infor.priceTypeData.valueVi}
+                                    displayType={'text'}
+                                    thousandSeparator={true}
+                                    suffix={'VND'}
+                                />}
+                            {doctorInfor && doctorInfor.Doctor_infor && doctorInfor.Doctor_infor.priceTypeData && language === LANGUAGE.EN &&
+                                <NumberFormat
+                                    value={doctorInfor.Doctor_infor.priceTypeData.valueEn}
+                                    displayType={'text'}
+                                    thousandSeparator={true}
+                                    suffix={'$'}
+                                />}
 
-                    </div>
-                    : ''}
+                        </div>
+                        : ''
+                }
             </>
         )
     }
